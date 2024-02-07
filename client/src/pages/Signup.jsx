@@ -11,19 +11,21 @@ const Signup = () => {
     setFormData({
       //spred operator to save the current data of input feild
       ...formData,
+
       [e.target.id]: e.target.value,
     });
   };
 
+  //defining behavior of submit button
   const handleSubmit = async (e) => {
     //to prevent refreshing the page on clicking submit function
     e.preventDefault();
 
     try {
-      //before request
+      //right now request is being processed so loading dikhega
       setLoading(true);
 
-      //fetching data from the form using proxy
+      //fetching data from the form using proxy url
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
@@ -31,6 +33,8 @@ const Signup = () => {
         },
         body: JSON.stringify(formData),
       });
+
+      //<<<<ab yaha p aate hi request process ho chuki h>>>>
 
       //changing strigify data again into json
       const data = await res.json();
