@@ -17,6 +17,7 @@ import {
   deleteUserSuccess,
   signOutUserStart,
 } from "../../redux/user/userSlice.js";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const [file, setFile] = useState(undefined);
@@ -180,6 +181,12 @@ export default function Profile() {
         >
           {loading ? "loading" : "Update"}
         </button>
+        <Link
+          className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-90"
+          to={"/create-listing"}
+        >
+          Create Listing
+        </Link>
         <p className="text-red-700">{error ? error : ""}</p>
         <p className="text-green-700">
           {updateSuccess ? "user is updated successfully!" : " "}
