@@ -64,7 +64,8 @@ export const Listing = () => {
                 <div
                   className="h-[550px]"
                   style={{
-                    background: `url(${url}) center no-repeat`,
+                    background: `url(${url}) center no-repeat `,
+                    backgroundSize: "cover",
                   }}
                 ></div>
               </SwiperSlide>
