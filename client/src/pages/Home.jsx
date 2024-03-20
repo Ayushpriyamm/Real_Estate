@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import { Listingitem } from "../components/Listingitem";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   const [offerListings, setOfferListings] = useState([]);
@@ -50,7 +51,24 @@ const Home = () => {
       {/* top side*/}
       <div className="flex flex-col gap-6 py-28 px-3 max-w-6xl mx-auto">
         <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
-          Find your next <span className="text-slate-500">perfect</span>
+          Find your next{" "}
+          <span className="text-slate-500">
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed once, initially
+                "Perfect.....",
+                1000,
+                "Ideal.....",
+                1000,
+                "Dream.....",
+                1000,
+                "Optimal.....",
+                1000,
+              ]}
+              speed={50}
+              repeat={Infinity}
+            />
+          </span>
           <br />
           place with ease
         </h1>
