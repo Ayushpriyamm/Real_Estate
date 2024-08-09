@@ -10,25 +10,8 @@ import { CreateListing } from "./pages/CreateListing";
 import { UpdateListing } from "./pages/UpdateListing";
 import { Listing } from "./pages/Listing";
 import { Search } from "./pages/Search";
-import LoadingSpinner from "./components/LoadingSpinner";
-import { Footer } from "./components/Footer";
-import { useEffect, useState } from "react";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const handleLoad = () => {
-      setLoading(false);
-    };
-    window.addEventListener("load", handleLoad);
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-  if (loading) {
-    return <LoadingSpinner />;
-  }
   return (
     <BrowserRouter>
       <Header />
